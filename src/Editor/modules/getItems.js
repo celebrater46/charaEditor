@@ -1,45 +1,57 @@
-const items = () => {
-    const items = [
-        { name: "name", title: "名前", type: "double" },
-        { name: "nickName", title: "称号", type: "double" },
-        { name: "birthday", title: "誕生日", type: "double" },
-        { name: "hometown", title: "出身地", type: "double" },
-        { name: "age", title: "年齢", type: "quarter" },
-        { name: "height", title: "身長", type: "quarter" },
-        { name: "weight", title: "体重", type: "quarter" },
-        { name: "bloodtype", title: "血液型", type: "quarter" },
-        { name: "outline", title: "概要", type: "single" },
-        { name: "looks", title: "外見", type: "single" },
-        { name: "history", title: "境遇", type: "single" },
-        { name: "purpose", title: "動機・目的・渇望", type: "single" },
-        { name: "secret", title: "秘密", type: "single" },
-        { name: "job", title: "職業・地位", type: "single" },
-        { name: "hobby", title: "趣味", type: "single" },
-        { name: "skill", title: "特技", type: "single" },
-        { name: "family", title: "家族・家庭", type: "single" },
-        { name: "friend", title: "友人", type: "single" },
-        { name: "love", title: "恋人", type: "single" },
-        { name: "relation", title: "その他対人関係・感情", type: "single" },
-        { name: "character", title: "性格・気質", type: "single" },
-        { name: "ideology", title: "思想", type: "single" },
-        { name: "item", title: "小道具", type: "single" },
-        { name: "habit", title: "癖や習慣", type: "single" },
-        { name: "sports", title: "運動神経・スポーツ", type: "single" },
-        { name: "tastes", title: "嗜好品", type: "single" },
-        { name: "fashion", title: "ファッション", type: "single" },
-        { name: "weakness", title: "欠点・弱点・脆さ", type: "single" },
-        { name: "magic", title: "特殊能力", type: "single" },
-        { name: "health", title: "健康状態", type: "single" },
-        { name: "originality", title: "個性", type: "single" },
-        { name: "house", title: "住居", type: "single" },
-        { name: "humor", title: "ユーモア", type: "single" },
-        { name: "pet", title: "ペット", type: "single" },
-        { name: "otaku", title: "何に詳しいか", type: "single" },
-        { name: "motto", title: "座右の銘", type: "single" },
-        { name: "others", title: "その他", type: "single" },
+const getSingleSizeItems = () => {
+    return [
+        { name: "outline", title: "概要" },
+        { name: "looks", title: "外見" },
+        { name: "history", title: "境遇" },
+        { name: "purpose", title: "動機・目的・渇望" },
+        { name: "secret", title: "秘密" },
+        { name: "job", title: "職業・地位" },
+        { name: "hobby", title: "趣味" },
+        { name: "skill", title: "特技" },
+        { name: "family", title: "家族・家庭" },
+        { name: "friend", title: "友人" },
+        { name: "love", title: "恋人" },
+        { name: "relation", title: "その他対人関係・感情" },
+        { name: "character", title: "性格・気質" },
+        { name: "ideology", title: "思想" },
+        { name: "item", title: "小道具" },
+        { name: "habit", title: "癖や習慣" },
+        { name: "sports", title: "運動神経・スポーツ" },
+        { name: "tastes", title: "嗜好品" },
+        { name: "fashion", title: "ファッション" },
+        { name: "weakness", title: "欠点・弱点・脆さ" },
+        { name: "magic", title: "特殊能力" },
+        { name: "health", title: "健康状態" },
+        { name: "originality", title: "個性" },
+        { name: "house", title: "住居" },
+        { name: "humor", title: "ユーモア" },
+        { name: "pet", title: "ペット" },
+        { name: "otaku", title: "何に詳しいか" },
+        { name: "motto", title: "座右の銘" },
+        { name: "others", title: "その他" },
     ];
-    
-    const placeholder = {
+}
+
+const getDoubleSizeItems = () => {
+    return [
+        { name: "name", title: "名前" },
+        { name: "nickName", title: "称号" },
+        { name: "birthday", title: "誕生日" },
+        { name: "hometown", title: "出身地" },
+    ];
+}
+
+const getQuarterSizeItems = () => {
+    return [
+        { name: "age", title: "年齢" },
+        { name: "height", title: "身長" },
+        { name: "weight", title: "体重" },
+        { name: "bloodtype", title: "血液型" },
+    ];
+}
+
+const getPlaceHolders = () => {
+    return {
         name: "",
         nickName: "渾名、二つ名など",
         birthday: "",
@@ -79,11 +91,31 @@ const items = () => {
         motto: "趣味の項目参照。熱中していること、または何かの専門家なのか",
         others: "崇拝者、天才、怒りん坊、泣き虫、相談役、バーゲン荒らし、働き蜂、応援団長、近所の兄ちゃん、白馬の王子様、肝っ玉母ちゃん、道化師、征服者、図々しい奴、鬱陶しい奴、薄気味悪い奴、銀幕のスター、アフロダンサー、お調子者、楽観主義者、ナルシスト、鬱な人、どこまでもとろい奴、老獪なキツネ、嵐を呼ぶ男（女）、十字軍の騎士、夢見る乙女、妖精の女王、忠実な下僕、セクシーな子猫ちゃん、優しい大男（大女）、死の商人、教祖様、悩める委員長、悩める主婦、鉄の女、ヒステリーママ、はにかみ屋、煙にまく人、武骨者、平和主義者、底抜けの明るさ、おせっかい、せっかちな奴、救世主、翼を休める天使、ドジな泥棒、うっかり者、うさんくさい奴、詐欺師、頑固一徹おやじ、飢えた芸術家、親バカパパ（ママ）、ならず者、チキン、悲劇の女王、のろま、みにくいアヒルの子、VIP、歩く災害、生き字引、血の気が多い男（女）、抜け殻のような男（女）、負け犬、勝ち組、野心家、殴られ屋、怪人、エンターテイメント、ダフ屋、情報屋、夜逃げ屋、聞き役、落伍者、愛すべき不良少年、狂人、自己顕示欲の塊、芸術大学にいた屈折した心を持つアスリート、潔癖完璧主義者、などなど"
     };
+}
 
+const addSizes = (size, items) => {
+    let _items = items;
+    for(const key in items) {
+        _items[key]["size"] = size;
+    }
+    return _items;
+}
+
+// const unifyItems = () => {
+//     const double = addSizes(1, getDoubleSizeItems);
+//     const quarter = addSizes(1, getQuarterSizeItems);
+//     const single = addSizes(1, getSingleSizeItems);
+//     return double.concat(quarter.concat(single));
+// }
+
+const getItems = () => {
+    const double = addSizes("double", getDoubleSizeItems);
+    const quarter = addSizes("quarter", getQuarterSizeItems);
+    const single = addSizes("single", getSingleSizeItems);
     return {
-        items: items,
-        placeholder: placeholder,
+        items: double.concat(quarter.concat(single)),
+        placeHolder: getPlaceHolders(),
     };
 }
 
-export default items;
+export default getItems;
