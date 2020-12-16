@@ -1,0 +1,20 @@
+html {
+    font-size: 14px;
+}
+body {
+    background-color: #333;
+    color: #ccc;
+    margin: 0 10px;
+}
+h1 {
+    font-size: 3rem;
+}
+div.autoSave > label {
+    display: flex;
+}
+
+@media (min-width:800px) {
+    img.top {
+        width: 1000px;
+    }
+}
