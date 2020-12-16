@@ -9,6 +9,7 @@ export default <style>{`
     }
     h1 {
         font-size: 2.5rem;
+        margin: 20px auto 20px;
     }
     label {
         text-align: center;
@@ -16,17 +17,21 @@ export default <style>{`
     div.autoSave {
         display: flex;
         justify-content: center;
-        margin: 20px auto;
+        margin: 15px auto;
+    }
+    div.autoSave > input, div.autoSave > div {
+        height: 25px;
+        margin: 0 2px;
     }
     button {
         width: 50vw;
         color: #ccc;
         background-color: #111;
-        font-size: 1.3rem;
         border-radius: 10px;
+        margin: 20px auto;
     }
-    button#restore {
-        margin: 15px auto 0;
+    button.data {
+        font-size: 1.3rem;
     }
 
     @media (min-width:800px) {

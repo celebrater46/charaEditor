@@ -2,8 +2,8 @@ import React from 'react';
 
 const Control = () => {
     return (
-        <p id="btnSave">
-            <button id="save">データの保存</button>
+        <div id="btnSave">
+            <button id="save" className="btn btn-secondary data">データの保存</button>
             <label>
                 <div className="autoSave">
                     <input id="autoSave" type="checkbox" name="autoSave" value="a" />
@@ -11,8 +11,8 @@ const Control = () => {
                 </div>
             </label>
             <div>↓ 名前を入力してから押してください</div>
-            <button id="restore">データの復元</button>
-        </p>
+            <button id="restore" className="btn btn-secondary data">データの復元</button>
+        </div>
     );
 }
 

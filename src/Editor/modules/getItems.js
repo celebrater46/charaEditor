@@ -109,9 +109,9 @@ const addSizes = (size, items) => {
 // }
 
 const getItems = () => {
-    const double = addSizes("double", getDoubleSizeItems);
-    const quarter = addSizes("quarter", getQuarterSizeItems);
-    const single = addSizes("single", getSingleSizeItems);
+    const double = addSizes("double", getDoubleSizeItems());
+    const quarter = addSizes("quarter", getQuarterSizeItems());
+    const single = addSizes("single", getSingleSizeItems());
     return {
         items: double.concat(quarter.concat(single)),
         placeHolder: getPlaceHolders(),
