@@ -4,6 +4,7 @@ import TextArea from "./TextArea";
 const TextAreas = (props) => {
     // const textAreas = getTextAreas();
     const items = props.items;
+    // const texts = props.texts;
 
     const setTexts = (id, value) => {
         return props.setTexts(id, value);

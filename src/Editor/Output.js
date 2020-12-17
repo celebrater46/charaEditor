@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 
 const Output = (props) => {
     // const [textarea, setTextarea] = useState(props.output);
-    
+    // const [output, setOutput] = useState("");
     // const handleChange = (e) => {
     //     setTextarea(e.target.value);
     // }
+    // const output = useMemo(() => props.texts.join("\n"), [props.texts]);
+    const output = props.output;
+    const handleChange = (e) => {
+        console.log(e.target.value);
+    }
 
     return (
         <div className="output">
@@ -20,10 +25,8 @@ const Output = (props) => {
                     <option value="true">改行あり</option>
                 </select>
             </div>
-            {/* <textarea id="outputArea" name="outputArea" className="form-control bg-dark text-light" placeholder="ここに人物設定書の完成文が出力されますので、コピペしてください。" value={textarea} onChange={handleChange} /> */}
-            <textarea id="outputArea" name="outputArea" className="form-control bg-dark text-light" placeholder="ここに人物設定書の完成文が出力されますので、コピペしてください。" readOnly>
-                { props.output }
-            </textarea>
+            <textarea id="outputArea" name="outputArea" className="form-control bg-dark text-light" placeholder="ここに人物設定書の完成文が出力されますので、コピペしてください。" value={output} onChange={handleChange} />
+            {/* <textarea id="outputArea" name="outputArea" className="form-control bg-dark text-light" placeholder="ここに人物設定書の完成文が出力されますので、コピペしてください。" value={output} onChange={handleChange} /> */}
         </div>
     );
 }

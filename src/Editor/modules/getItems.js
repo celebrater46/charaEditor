@@ -93,10 +93,11 @@ const getPlaceHolders = () => {
     };
 }
 
-const addSizes = (size, items) => {
+const addSizesAndTexts = (size, items) => {
     let _items = items;
     for(const key in items) {
         _items[key]["size"] = size;
+        _items[key]["text"] = "";
     }
     return _items;
 }
@@ -109,9 +110,9 @@ const addSizes = (size, items) => {
 // }
 
 const getItems = () => {
-    const double = addSizes("double", getDoubleSizeItems());
-    const quarter = addSizes("quarter", getQuarterSizeItems());
-    const single = addSizes("single", getSingleSizeItems());
+    const double = addSizesAndTexts("double", getDoubleSizeItems());
+    const quarter = addSizesAndTexts("quarter", getQuarterSizeItems());
+    const single = addSizesAndTexts("single", getSingleSizeItems());
     return {
         items: double.concat(quarter.concat(single)),
         placeHolder: getPlaceHolders(),
