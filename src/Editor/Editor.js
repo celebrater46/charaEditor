@@ -4,6 +4,7 @@ import Control from "./Control";
 import TextAreas from "./TextAreas";
 import Output from "./Output";
 import getItems from "./modules/getItems";
+import { saveData, getJsonData, autoSave } from "./modules/saveData";
 import consoleLog from "../static/consoleLog";
 
 // エラーログ用
@@ -41,10 +42,20 @@ const Editor = () => {
         unifyTexts(texts, isBr);
     }
 
+    const restoreData = () => {
+        const obj = getJsonData();
+        setTexts(obj);
+        // setTexts(getJsonData());
+        unifyTexts(obj, isBr);
+    }
+
+    // 自動保存機能
+    autoSave();
+
     return (
         <div className="container">
             <Header />
-            <Control />
+            <Control saveData={() => saveData(texts)} restoreData={() => restoreData()} />
             <TextAreas items={items} setTexts={(id, value) => setTextsArray(id, value)} />
             <Output output={output} changeSelect={(isBr) => changeSelect(isBr)} />
         </div>

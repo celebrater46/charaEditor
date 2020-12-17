@@ -1,10 +1,19 @@
 import React from 'react';
+import { restoreData } from './modules/saveData';
 
 // タイトルの下にある機能ボタン
-const Control = () => {
+const Control = (props) => {
+    const saveData = () => {
+        return props.saveData();
+    }
+
+    const restoreData = () => {
+        return props.restoreData();
+    }
+
     return (
         <div id="btnSave">
-            <button id="save" className="btn btn-secondary data">データの保存</button>
+            <button id="save" className="btn btn-secondary data" onClick={() => saveData()} >データの保存</button>
             <label>
                 <div className="autoSave">
                     <input id="autoSave" type="checkbox" name="autoSave" value="a" />
@@ -12,7 +21,7 @@ const Control = () => {
                 </div>
             </label>
             <div>↓ 名前を入力してから押してください</div>
-            <button id="restore" className="btn btn-secondary data">データの復元</button>
+            <button id="restore" className="btn btn-secondary data" onClick={() => restoreData()} >データの復元</button>
         </div>
     );
 }
