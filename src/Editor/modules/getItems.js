@@ -102,13 +102,6 @@ const addSizesAndTexts = (size, items) => {
     return _items;
 }
 
-// const unifyItems = () => {
-//     const double = addSizes(1, getDoubleSizeItems);
-//     const quarter = addSizes(1, getQuarterSizeItems);
-//     const single = addSizes(1, getSingleSizeItems);
-//     return double.concat(quarter.concat(single));
-// }
-
 const getItems = () => {
     const double = addSizesAndTexts("double", getDoubleSizeItems());
     const quarter = addSizesAndTexts("quarter", getQuarterSizeItems());

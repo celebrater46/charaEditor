@@ -1,8 +1,6 @@
 import React from 'react';
 
 const TextArea = (props) => {
-    // const [value, setValue] = useState("");
-
     const handleChange = (e) => {
         return props.setTexts(props.id, e.target.value);
     }
@@ -15,7 +13,6 @@ const TextArea = (props) => {
         <div className={props.size}>
             <h2>{ props.title }</h2>
             { input }
-            {/* <p>{ value }</p> */}
         </div>
     );
 }
