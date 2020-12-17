@@ -5,7 +5,7 @@ export default <style>{`
     body {
         background-color: #333;
         color: #ccc;
-        margin: 0 10px;
+        margin: 0;
     }
     h1 {
         font-size: 2rem;
@@ -21,6 +21,9 @@ export default <style>{`
     }
     label {
         text-align: center;
+    }
+    div.container {
+        width: 100vw;
     }
     div.autoSave {
         display: flex;
@@ -76,8 +79,43 @@ export default <style>{`
     }
 
     @media (min-width:800px) {
-        img.top {
-            width: 1000px;
+        html {
+            font-size: 1.5vw;
+        }
+        h1 {
+            font-size: 2rem;
+            margin: 30px auto 50px;;
+        }
+        h2 {
+            font-size: 1.3rem;
+        }
+        div.container {
+            width: 800px;
+        }
+        button.data {
+            width: 25vw;
+            margin: 30px auto;
+        }
+        div.autoSave > input, div.autoSave > div {
+            height: 30px;
+            margin: 0 4px;
+        }
+        div.double, div.quarter {
+            padding: 20px 0;
+        }
+        div.double > input, div.quarter > input {
+            height: 45px;
+            flex: 1;
+        }
+        div.double > h2, div.quarter > h2 {
+            width: 100px;
+            margin: 5px auto auto 10px;
+        }
+        div.single > textarea {
+            height: 180px;
+        }
+        div.output textarea {
+            height: 350px;
         }
     }
 `}</style>

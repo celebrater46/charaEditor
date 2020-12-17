@@ -7,12 +7,12 @@ import Output from "./Output";
 const Editor = () => {
     // const h1Style = { color: "#fff" };
     return (
-        <>
+        <div className="container">
             <Header />
             <Control />
             <TextAreas />
             <Output />
-        </>
+        </div>
     );
 }
 
