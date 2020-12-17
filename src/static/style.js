@@ -66,13 +66,17 @@ export default <style>{`
         margin: 20px auto;
         padding: 10px;
     }
-    div.output > div {
+    div.navi > div {
         display: flex;
         margin: 10px auto;
     }
     div.output button {
         flex: 1;
         margin: 0 5px 0 0;
+    }
+    div.output select {
+        flex: 1;
+        margin: 0;
     }
     div.output textarea {
         height: 250px;
