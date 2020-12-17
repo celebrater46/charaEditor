@@ -1,5 +1,6 @@
 import React from 'react';
 
+// 出力欄のコンポーネント
 const Output = (props) => {
     const output = props.output;
 

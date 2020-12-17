@@ -1,5 +1,6 @@
 import React from 'react';
 
+// タイトルの下にある機能ボタン
 const Control = () => {
     return (
         <div id="btnSave">

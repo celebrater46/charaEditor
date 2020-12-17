@@ -1,3 +1,4 @@
+// 大きな入力欄を持つ項目
 const getSingleSizeItems = () => {
     return [
         { name: "outline", title: "概要" },
@@ -32,6 +33,7 @@ const getSingleSizeItems = () => {
     ];
 }
 
+// 中くらいの入力欄を持つ項目（getQuarterと統合）
 const getDoubleSizeItems = () => {
     return [
         { name: "name", title: "名前" },
@@ -41,6 +43,7 @@ const getDoubleSizeItems = () => {
     ];
 }
 
+// 小さい入力欄を持つ項目
 const getQuarterSizeItems = () => {
     return [
         { name: "age", title: "年齢" },
@@ -50,6 +53,7 @@ const getQuarterSizeItems = () => {
     ];
 }
 
+// 入力欄のプレースホルダー
 const getPlaceHolders = () => {
     return {
         name: "",
@@ -93,6 +97,7 @@ const getPlaceHolders = () => {
     };
 }
 
+// 各配列に size と text プロパティを追加
 const addSizesAndTexts = (size, items) => {
     let _items = items;
     for(const key in items) {
@@ -102,6 +107,7 @@ const addSizesAndTexts = (size, items) => {
     return _items;
 }
 
+// 項目の名前とプレースホルダーを出力
 const getItems = () => {
     const double = addSizesAndTexts("double", getDoubleSizeItems());
     const quarter = addSizesAndTexts("quarter", getQuarterSizeItems());

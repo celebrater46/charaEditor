@@ -1,6 +1,8 @@
 import React from 'react';
 
+// テキストエリアのコンポーネント（ひとつ）
 const TextArea = (props) => {
+    // テキスト欄に入力したら親要素のイベント呼び出し
     const handleChange = (e) => {
         return props.setTexts(props.id, e.target.value);
     }

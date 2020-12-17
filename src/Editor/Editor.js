@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from "./Header";
 import Control from "./Control";
 import TextAreas from "./TextAreas";
@@ -26,6 +26,7 @@ const Editor = () => {
         setOutput(() => (result.length > 1) ? result.join((isBr) ? "\n" : "　" ) : result[0] );
     }
 
+    // テキストエリアに文章を入力したら配列に反映する（出力欄に自動出力）
     const setTextsArray = (id, value) => {
         let _texts = texts;
         consoleLog([id, value, _texts], "id, value, _texts", "Editor", nameOfComponent, false);
@@ -34,6 +35,7 @@ const Editor = () => {
         unifyTexts(_texts, isBr);
     }
 
+    // 改行ありと改行なしの切り替え
     const changeSelect = (isBr) => {
         setIsBr(isBr);
         unifyTexts(texts, isBr);

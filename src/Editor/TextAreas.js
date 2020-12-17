@@ -1,10 +1,9 @@
 import React from 'react';
 import TextArea from "./TextArea";
 
+// テキストエリアのコンポーネント（全部）
 const TextAreas = (props) => {
-    // const textAreas = getTextAreas();
     const items = props.items;
-    // const texts = props.texts;
 
     const setTexts = (id, value) => {
         return props.setTexts(id, value);

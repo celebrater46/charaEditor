@@ -1,3 +1,4 @@
+// エラーログおよびテスト用ログ
 const consoleLog = (vars, names, fn, file, isError) => {
     const available = true;
     const endOf = (() => { if(isError) { return ".js, either of vars is wrong." } else { return ".js is ... " }})();
