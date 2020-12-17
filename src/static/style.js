@@ -11,6 +11,14 @@ export default <style>{`
         font-size: 2.5rem;
         margin: 20px auto 20px;
     }
+    h2 {
+        font-size: 1.5rem;
+        text-align: left;
+    }
+    div {
+        margin: 0;
+        padding: 0;
+    }
     label {
         text-align: center;
     }
@@ -23,6 +31,9 @@ export default <style>{`
         height: 25px;
         margin: 0 2px;
     }
+    div#btnSave {
+        margin: 0 auto 20px;
+    }
     button {
         width: 50vw;
         color: #ccc;
@@ -32,6 +43,24 @@ export default <style>{`
     }
     button.data {
         font-size: 1.3rem;
+    }
+    div.double, div.quarter {
+        display: flex;
+        padding: 10px;
+    }
+    div.double > input, div.quarter > input {
+        height: 35px;
+        flex: 1;
+    }
+    div.double > h2, div.quarter > h2 {
+        width: 80px;
+        margin: 5px auto auto 0;
+    }
+    div.single {
+        padding: 30px 10px 0;
+    }
+    div.single > textarea {
+        height: 120px;
     }
 
     @media (min-width:800px) {

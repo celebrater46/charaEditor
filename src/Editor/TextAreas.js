@@ -12,6 +12,7 @@ const TextAreas = () => {
             components.push(<TextArea id={i} name={item.name} title={item.title} size={item.size} placeHolder={items.placeHolder[item.name]} />);
             i++;
         }
+        return components;
     })();
 
     return <>{ textAreas }</>;
