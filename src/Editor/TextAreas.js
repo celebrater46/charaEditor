@@ -5,15 +5,15 @@ const TextAreas = (props) => {
     // const textAreas = getTextAreas();
     const items = props.items;
 
-    const setTexts = (key, value) => {
-        return props.setTexts(key, value);
+    const setTexts = (id, value) => {
+        return props.setTexts(id, value);
     }
 
     const textAreas = (() => {
         let components = [];
-        let i = 1;
+        let i = 0;
         for(let item of items.items) {
-            components.push(<TextArea key={i} name={item.name} title={item.title} size={item.size} placeHolder={items.placeHolder[item.name]} setTexts={(key, value) => setTexts(key, value)} />);
+            components.push(<TextArea key={i} id={i} name={item.name} title={item.title} size={item.size} placeHolder={items.placeHolder[item.name]} setTexts={(id, value) => setTexts(id, value)} />);
             i++;
         }
         return components;

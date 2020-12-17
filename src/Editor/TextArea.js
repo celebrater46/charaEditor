@@ -4,7 +4,7 @@ const TextArea = (props) => {
     // const [value, setValue] = useState("");
 
     const handleChange = (e) => {
-        return props.setTexts(props.key, e.target.value);
+        return props.setTexts(props.id, e.target.value);
     }
 
     const input = (props.size !== "single") ? 
