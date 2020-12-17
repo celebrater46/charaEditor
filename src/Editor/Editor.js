@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "./Header";
 import Control from "./Control";
 import TextAreas from "./TextAreas";
+import Output from "./Output";
 
 const Editor = () => {
     // const h1Style = { color: "#fff" };
@@ -10,6 +11,7 @@ const Editor = () => {
             <Header />
             <Control />
             <TextAreas />
+            <Output />
         </>
     );
 }

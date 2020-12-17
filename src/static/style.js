@@ -1,6 +1,6 @@
 export default <style>{`
     html {
-        font-size: 14px;
+        font-size: 16px;
     }
     body {
         background-color: #333;
@@ -8,7 +8,7 @@ export default <style>{`
         margin: 0 10px;
     }
     h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
         margin: 20px auto 20px;
     }
     h2 {
@@ -35,14 +35,11 @@ export default <style>{`
         margin: 0 auto 20px;
     }
     button {
-        width: 50vw;
-        color: #ccc;
-        background-color: #111;
-        border-radius: 10px;
-        margin: 20px auto;
+        font-size: 1.3rem;
     }
     button.data {
-        font-size: 1.3rem;
+        width: 50vw;
+        margin: 20px auto;
     }
     div.double, div.quarter {
         display: flex;
@@ -61,6 +58,21 @@ export default <style>{`
     }
     div.single > textarea {
         height: 120px;
+    }
+    div.output {
+        margin: 20px auto;
+        padding: 10px;
+    }
+    div.output > div {
+        display: flex;
+        margin: 10px auto;
+    }
+    div.output button {
+        flex: 1;
+        margin: 0 5px 0 0;
+    }
+    div.output textarea {
+        height: 250px;
     }
 
     @media (min-width:800px) {
