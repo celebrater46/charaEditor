@@ -28,11 +28,13 @@ const Editor = () => {
     // const h1Style = { color: "#fff" };
 
     const unifyTexts = (texts) => {
-        // let result = [];
-        // for(const text of texts) {
-        //     if(text !== "") {}
-        // }
-        return texts.map((text) => text.text);
+        let result = [];
+        for(const text of texts) {
+            if(text.text !== "") { result.push(text.text); }
+        }
+        // if(result.length === 1) { result.push(""); }
+        return result;
+        // return texts.map((text) => text.text);
     }
 
     const setTextsArray = (id, value) => {
@@ -43,7 +45,8 @@ const Editor = () => {
         const __texts = unifyTexts(_texts);
         // setOutput(unifyTexts(_texts).join("\n"));
         consoleLog([__texts], "__texts", "Editor", nameOfComponent, false);
-        setOutput(__texts.join("\n"));
+        setOutput(() => (__texts.length > 1) ? __texts.join("\n") : __texts[0] );
+        // setOutput(__texts.join("\n"));
         consoleLog([texts, output], "texts, output", "Editor", nameOfComponent, false)
     }
 
