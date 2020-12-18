@@ -84,7 +84,7 @@ export default <style>{`
 
     @media (min-width:800px) {
         html {
-            font-size: 1.5vw;
+            font-size: 18px;
         }
         h1 {
             font-size: 2rem;

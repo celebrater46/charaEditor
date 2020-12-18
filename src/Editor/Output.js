@@ -20,8 +20,8 @@ const Output = (props) => {
                 <div>
                     <button id="select" className="btn btn-secondary">全選択</button>
                     <select id="paragraph" name="paragraph" onChange={handleChangeSelect} >
-                        <option value="false">改行なし</option>
                         <option value="true">改行あり</option>
+                        <option value="false">改行なし</option>
                     </select>
                 </div>
             </div>

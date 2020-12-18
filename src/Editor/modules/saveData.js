@@ -4,16 +4,17 @@ export const saveData = (obj) => {
     const name = obj[0]["value"];
     // if(name === null) { name = "No Name"; }
     localStorage.setItem(name, setJson);
+    console.log("Data is saved. obj: ");
     // console.log("obj from setJson:");
-    // console.log(obj);
+    console.log(obj);
 }
 
-export const autoSave = (obj, isOn) => {
-    // let bool = $("#autoSave").prop("checked");
-    // console.log(bool);
-    if(isOn) { saveData(obj); }
-    setTimeout(autoSave, 60000);
-};
+// export const callAutoSave = (obj, isOn) => {
+//     // let bool = $("#autoSave").prop("checked");
+//     // console.log(bool);
+//     if(isOn) { saveData(obj); }
+//     setTimeout(callAutoSave, 1000);
+// };
 
 // データ復元
 export const getJsonData = (name) => {

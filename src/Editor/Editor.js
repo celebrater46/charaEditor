@@ -4,7 +4,7 @@ import Control from "./Control";
 import TextAreas from "./TextAreas";
 import Output from "./Output";
 import getItems from "./modules/getItems";
-import { saveData, getJsonData, autoSave } from "./modules/saveData";
+import { saveData, getJsonData } from "./modules/saveData";
 import consoleLog from "../static/consoleLog";
 
 // エラーログ用
@@ -14,9 +14,11 @@ const nameOfComponent = "Editor";
 const Editor = () => {
     const items = getItems();
     const [texts, setTexts] = useState(items.items);
-    const [isBr, setIsBr] = useState(false);
+    const [isBr, setIsBr] = useState(true);
+    const [autoSave, setAutoSave] = useState(false);
     const [output, setOutput] = useState("");
-    useEffect(() => consoleLog([texts], "texts", "Editor", nameOfComponent, false), [texts]);
+    // useEffect(() => consoleLog([texts], "texts", "Editor", nameOfComponent, false), [texts]);
+    useEffect(() => consoleLog([autoSave], "autoSave", "Editor", nameOfComponent, false), [autoSave]);
 
     const unifyTexts = (texts, isBr) => {
         const _items = items.items;
@@ -30,7 +32,7 @@ const Editor = () => {
     // テキストエリアに文章を入力したら配列に反映する（出力欄に自動出力）
     const setTextsArray = (id, value) => {
         let _texts = texts;
-        consoleLog([id, value, _texts], "id, value, _texts", "Editor", nameOfComponent, false);
+        // consoleLog([id, value, _texts], "id, value, _texts", "Editor", nameOfComponent, false);
         _texts[id]["text"] = value;
         setTexts(_texts);
         unifyTexts(_texts, isBr);
@@ -42,21 +44,42 @@ const Editor = () => {
         unifyTexts(texts, isBr);
     }
 
+    // const callAutoSave = () => {
+    //     // let bool = $("#autoSave").prop("checked");
+    //     // console.log(bool);
+    //     saveData(texts);
+    //     let fn = setTimeout(callAutoSave, 1000);
+    //     if(autoSave === false) { clearTimeout(fn); }
+    // };
+    
+    useEffect(() => {
+        let callAutoSave;
+        if(autoSave) { 
+            callAutoSave = setInterval(() => saveData(texts), 1000);
+            // return () => clearInterval(callAutoSave);
+        } else { 
+            // return () => clearInterval(callAutoSave);
+        }
+        return () => clearInterval(callAutoSave);
+    }, [autoSave]);
+
     const restoreData = () => {
         const obj = getJsonData();
         setTexts(obj);
         // setTexts(getJsonData());
         unifyTexts(obj, isBr);
+        console.log("Data is restored.");
+        consoleLog([obj, isBr], "obj, isBr", "restoreData", nameOfComponent, false);
     }
 
     // 自動保存機能
-    autoSave();
+    // autoSave();
 
     return (
         <div className="container">
             <Header />
-            <Control saveData={() => saveData(texts)} restoreData={() => restoreData()} />
-            <TextAreas items={items} setTexts={(id, value) => setTextsArray(id, value)} />
+            <Control saveData={() => saveData(texts)} restoreData={() => restoreData()} toggleSave={() => setAutoSave(!autoSave)} />
+            <TextAreas items={items} texts={texts} setTexts={(id, value) => setTextsArray(id, value)} />
             <Output output={output} changeSelect={(isBr) => changeSelect(isBr)} />
         </div>
     );

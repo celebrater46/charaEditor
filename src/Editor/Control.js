@@ -3,6 +3,8 @@ import { restoreData } from './modules/saveData';
 
 // タイトルの下にある機能ボタン
 const Control = (props) => {
+    // const [autoSave, setAutoSave] = useState(false);
+
     const saveData = () => {
         return props.saveData();
     }
@@ -11,12 +13,17 @@ const Control = (props) => {
         return props.restoreData();
     }
 
+    const toggleSave = () => {
+        console.log("toggleSave() in Control.js is workings.");
+        return props.toggleSave();
+    }
+
     return (
         <div id="btnSave">
             <button id="save" className="btn btn-secondary data" onClick={() => saveData()} >データの保存</button>
             <label>
                 <div className="autoSave">
-                    <input id="autoSave" type="checkbox" name="autoSave" value="a" />
+                    <input id="autoSave" type="checkbox" name="autoSave" onChange={()=> toggleSave()} />
                     <div>自動保存機能を有効にする（1分毎、名前入力必須）</div>
                 </div>
             </label>

@@ -13,7 +13,7 @@ const TextAreas = (props) => {
         let components = [];
         let i = 0;
         for(let item of items.items) {
-            components.push(<TextArea key={i} id={i} name={item.name} title={item.title} size={item.size} placeHolder={items.placeHolder[item.name]} setTexts={(id, value) => setTexts(id, value)} />);
+            components.push(<TextArea key={i} id={i} name={item.name} title={item.title} size={item.size} placeHolder={items.placeHolder[item.name]} text={props.texts[i].text} setTexts={(id, value) => setTexts(id, value)} />);
             i++;
         }
         return components;

@@ -8,8 +8,8 @@ const TextArea = (props) => {
     }
 
     const input = (props.size !== "single") ? 
-        <input id={props.id} name={props.name} placeholder={props.placeHolder} className={props.size + " form-control bg-dark text-light"} onChange={handleChange} /> : 
-        <textarea id={props.id} name={props.name} placeholder={props.placeHolder} className={props.size + " form-control bg-dark text-light"} onChange={handleChange} ></textarea>;
+        <input id={props.id} name={props.name} placeholder={props.placeHolder} className={props.size + " form-control bg-dark text-light"} value={props.text} onChange={handleChange} /> : 
+        <textarea id={props.id} name={props.name} placeholder={props.placeHolder} className={props.size + " form-control bg-dark text-light"} value={props.text} onChange={handleChange} ></textarea>;
 
     return (
         <div className={props.size}>
