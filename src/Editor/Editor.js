@@ -17,9 +17,9 @@ const Editor = () => {
     const [isBr, setIsBr] = useState(true);
     const [autoSave, setAutoSave] = useState(false);
     const [output, setOutput] = useState("");
-    // useEffect(() => consoleLog([texts], "texts", "Editor", nameOfComponent, false), [texts]);
     useEffect(() => consoleLog([autoSave], "autoSave", "Editor", nameOfComponent, false), [autoSave]);
 
+    // texts オブジェクトから文章を統合して出力欄に反映する
     const unifyTexts = (texts, isBr) => {
         const _items = items.items;
         let result = [];
@@ -32,7 +32,6 @@ const Editor = () => {
     // テキストエリアに文章を入力したら配列に反映する（出力欄に自動出力）
     const setTextsArray = (id, value) => {
         let _texts = texts;
-        // consoleLog([id, value, _texts], "id, value, _texts", "Editor", nameOfComponent, false);
         _texts[id]["text"] = value;
         setTexts(_texts);
         unifyTexts(_texts, isBr);
@@ -44,36 +43,21 @@ const Editor = () => {
         unifyTexts(texts, isBr);
     }
 
-    // const callAutoSave = () => {
-    //     // let bool = $("#autoSave").prop("checked");
-    //     // console.log(bool);
-    //     saveData(texts);
-    //     let fn = setTimeout(callAutoSave, 1000);
-    //     if(autoSave === false) { clearTimeout(fn); }
-    // };
-    
+    // 自動保存が有効の場合、60秒ごとにローカルストレージに保存
     useEffect(() => {
         let callAutoSave;
-        if(autoSave) { 
-            callAutoSave = setInterval(() => saveData(texts), 1000);
-            // return () => clearInterval(callAutoSave);
-        } else { 
-            // return () => clearInterval(callAutoSave);
-        }
+        if(autoSave) { callAutoSave = setInterval(() => saveData(texts), 60000); }
         return () => clearInterval(callAutoSave);
     }, [autoSave]);
 
+    // データの復元
     const restoreData = () => {
         const obj = getJsonData();
         setTexts(obj);
-        // setTexts(getJsonData());
         unifyTexts(obj, isBr);
         console.log("Data is restored.");
         consoleLog([obj, isBr], "obj, isBr", "restoreData", nameOfComponent, false);
     }
-
-    // 自動保存機能
-    // autoSave();
 
     return (
         <div className="container">

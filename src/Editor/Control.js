@@ -1,10 +1,7 @@
 import React from 'react';
-import { restoreData } from './modules/saveData';
 
 // タイトルの下にある機能ボタン
 const Control = (props) => {
-    // const [autoSave, setAutoSave] = useState(false);
-
     const saveData = () => {
         return props.saveData();
     }
